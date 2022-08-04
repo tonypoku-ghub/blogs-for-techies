@@ -1,0 +1,48 @@
+<div class="flex flex-col mb-4 p-6 shadow-lg bg-gray-100 w-1/2">
+  <div class="shadow-lg p-6">
+    <h3 class="font-bold text-xl mb-6 bg-gray-500 text-white">Create a New Blog:</h3>
+
+    <form class="form new-blog-form" method="post">
+      <div class="form-group flex pb-3">
+        <label for="blog-name col-md-4" class="mr-4">Blog name:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="blog-title"
+          name="blog-title"
+        />
+      </div>
+      <div class="form-group flex">
+        <label for="blog-desc col-md-4" class="mr-4">description:</label>
+        <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
+      </div>
+      <div class="form-group flex flex-row justify-end">
+        <button
+          type="submit"
+          class="border-2 px-3 border-blue-100 bg-gray-600 text-white"
+        >Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if author_blogs.length}}
+    <div class="col-md-6 blog-list">
+      <h3 class="mb-4">Current Blogs:</h3>
+
+      {{#each author_blogs as |blog|}}
+        <div class="flex flex-row justify-between bg-gray-400 mb-2">
+          <div class="">
+            <h4><a href="/blogs/{{blog.id}}">{{blog.title}}</a></h4>
+          </div>
+          <div class="form-group flex flex-row justify-end">
+            <button
+              class="border-2 px-3 border-blue-100 bg-gray-600 text-white rounded-lg text-md"
+              data-id="{{blog.id}}"
+            >Delete</button></div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>
