@@ -7,7 +7,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/seed.js",
-    "build": "npx tailwindcss -i src/tw-input.css -o public/css/tw-style.css --watch"
+    "tw-watch": "npx tailwindcss -i src/tw-input.css -o public/css/tw-style.css --watch"
   },
   "keywords": [],
   "author": "",
