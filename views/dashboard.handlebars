@@ -1,6 +1,7 @@
 <div class="flex flex-col mb-4 p-6 shadow-lg bg-gray-100 w-1/2">
   <div class="shadow-lg p-6">
-    <h3 class="font-bold text-xl mb-6 bg-gray-500 text-white">Create a New Blog:</h3>
+    <h3 class="font-bold text-xl mb-6 bg-gray-500 text-white px-2">Create a New
+      Blog:</h3>
 
     <form class="form new-blog-form" method="post">
       <div class="form-group flex pb-3">
@@ -27,16 +28,16 @@
 
   {{#if author_blogs.length}}
     <div class="col-md-6 blog-list">
-      <h3 class="mb-4">Current Blogs:</h3>
+      <h3 class="mb-4 text-lg font-semibold">Current Blogs:</h3>
 
       {{#each author_blogs as |blog|}}
         <div class="flex flex-row justify-between bg-gray-400 mb-2">
-          <div class="">
+          <div class="px-2" title="{{blog.description}}">
             <h4><a href="/blogs/{{blog.id}}">{{blog.title}}</a></h4>
           </div>
           <div class="form-group flex flex-row justify-end">
             <button
-              class="border-2 px-3 border-blue-100 bg-gray-600 text-white rounded-lg text-md"
+              class="border-2 px-3 border-blue-100 bg-gray-600 text-white rounded-lg text-md m-1"
               data-id="{{blog.id}}"
             >Delete</button></div>
         </div>

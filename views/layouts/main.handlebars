@@ -60,7 +60,7 @@
         </nav>
       </header>
       <main class="flex flex-col w-full justify-center items-center">
-        {{#if logged_in}}
+        {{#if session.logged_in}}
           <div class="flex flex-row mb-4 p-6 shadow-lg">
             <div class="justify-start">
               <h2>Welcome, {{session.username}}!</h2>

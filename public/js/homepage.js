@@ -5,4 +5,6 @@ const gotoBlogEdit = async (event) => {
   }
 };
 
-document.querySelector(".blog-item").addEventListener("click", gotoBlogEdit);
+document
+  .querySelectorAll(".blog-item")
+  .forEach((item) => item.addEventListener("click", gotoBlogEdit));
